@@ -1,0 +1,71 @@
+{
+  "categories": [
+    {
+      "id": "agentic",
+      "name": "Agentic AI",
+      "color": "#5eead4",
+      "description": "Agents that reason, pick tools, and complete multi-step tasks.",
+      "skills": [
+        "AI Agents",
+        "Single-Agent Systems",
+        "Multi-Step Agent Workflows",
+        "LLM Integration",
+        "Tool Calling",
+        "MCP",
+        "LangChain",
+        "RAG"
+      ]
+    },
+    {
+      "id": "automation",
+      "name": "Automation",
+      "color": "#22d3ee",
+      "description": "Connecting AI, APIs and platforms into reliable workflows.",
+      "skills": ["n8n", "Workflow Automation", "API Automation", "AI Workflow Design"]
+    },
+    {
+      "id": "browser",
+      "name": "Browser Automation",
+      "color": "#a78bfa",
+      "description": "Driving real browsers to extract, capture and act.",
+      "skills": [
+        "Playwright",
+        "Python",
+        "Web Scraping",
+        "Data Extraction",
+        "Screenshot Automation",
+        "Website Interaction"
+      ]
+    },
+    {
+      "id": "processing",
+      "name": "AI Processing",
+      "color": "#fbbf24",
+      "description": "Turning raw data into structured, useful output.",
+      "skills": [
+        "LLM Analysis",
+        "Structured Outputs",
+        "AI Reporting",
+        "Research Automation",
+        "Document / Presentation Generation"
+      ]
+    },
+    {
+      "id": "fullstack",
+      "name": "Full-Stack Development",
+      "color": "#f472b6",
+      "description": "Shipping the product around the intelligence.",
+      "skills": ["React", "Node.js", "Express", "MongoDB", "APIs", "JavaScript", "TypeScript"]
+    }
+  ],
+  "links": [
+    { "from": "agentic", "to": "automation" },
+    { "from": "agentic", "to": "browser" },
+    { "from": "agentic", "to": "processing" },
+    { "from": "automation", "to": "browser" },
+    { "from": "browser", "to": "processing" },
+    { "from": "processing", "to": "fullstack" },
+    { "from": "automation", "to": "fullstack" },
+    { "from": "agentic", "to": "fullstack" }
+  ]
+}

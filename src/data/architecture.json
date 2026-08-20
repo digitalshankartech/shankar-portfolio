@@ -1,0 +1,87 @@
+[
+  {
+    "id": "input",
+    "title": "User / Input",
+    "short": "Where work enters the system",
+    "description": "Every system starts with a trigger: a person submitting a task, a form, a webhook from another tool, a scheduled run, or an email landing in an inbox.",
+    "experience": [
+      "Form and dashboard inputs in React applications",
+      "Webhook and API triggers (n8n, Express)",
+      "Scheduled jobs for recurring research and checks",
+      "Task queues for long-running browser work"
+    ],
+    "items": ["Forms", "Webhooks", "Schedules", "Chat / Email", "API requests"],
+    "color": "#e7e9ee"
+  },
+  {
+    "id": "orchestration",
+    "title": "AI Orchestration",
+    "short": "Plans the work and coordinates steps",
+    "description": "The orchestration layer decides what needs to happen: it breaks the task into steps, chooses tools, tracks state, enforces limits, and decides when a human should approve.",
+    "experience": [
+      "Planner → executor → reviewer agent loops",
+      "LangChain-based chains and agents",
+      "Step limits, retries and stop conditions",
+      "Approval gates for sensitive actions"
+    ],
+    "items": ["Task planning", "Tool selection", "State tracking", "Guardrails", "Approvals"],
+    "color": "#5eead4"
+  },
+  {
+    "id": "reasoning",
+    "title": "LLM / Reasoning",
+    "short": "Understands, analyses, decides",
+    "description": "Large language models read inputs, analyse extracted data, classify, summarise and produce structured outputs that the rest of the system can rely on.",
+    "experience": [
+      "OpenAI and other LLM APIs with tool calling",
+      "JSON-schema / structured outputs for safe templating",
+      "Prompt design for analysis, classification and reporting",
+      "RAG over documents and extracted web content"
+    ],
+    "items": ["Tool calling", "Structured outputs", "Analysis", "Classification", "RAG"],
+    "color": "#22d3ee"
+  },
+  {
+    "id": "tools",
+    "title": "Tools",
+    "short": "How the system acts on the world",
+    "description": "Tools give the agent hands: a browser it can drive, APIs it can call, databases it can read and write, MCP servers that expose capabilities, and external services.",
+    "experience": [
+      "Playwright browser automation (navigation, extraction, screenshots)",
+      "REST API integrations and webhooks",
+      "MongoDB reads/writes as agent tools",
+      "MCP servers for typed tool access",
+      "External services: email, chat, document generation"
+    ],
+    "items": ["Browser Automation", "APIs", "Databases", "MCP", "External Services"],
+    "color": "#a78bfa"
+  },
+  {
+    "id": "memory",
+    "title": "Memory / Data",
+    "short": "What the system remembers",
+    "description": "Run state, intermediate results, extracted datasets, embeddings and logs — stored so runs can be resumed, audited and improved.",
+    "experience": [
+      "MongoDB for run state and structured results",
+      "File storage for screenshots and generated assets",
+      "Vector search for retrieval (currently deepening)",
+      "Run logs with per-step inputs and outputs"
+    ],
+    "items": ["Run state", "Datasets", "Embeddings", "Assets", "Logs"],
+    "color": "#fbbf24"
+  },
+  {
+    "id": "output",
+    "title": "Output",
+    "short": "Results a human can use",
+    "description": "The system ends with something useful: a report, a presentation, a dashboard update, a notification, or an action performed on another system.",
+    "experience": [
+      "Automated PowerPoint / document generation",
+      "Dashboards built in React",
+      "Email and chat notifications",
+      "Automated actions through APIs and browser workflows"
+    ],
+    "items": ["Reports", "Dashboards", "Presentations", "Automated Actions", "Notifications"],
+    "color": "#f472b6"
+  }
+]

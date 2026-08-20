@@ -1,0 +1,181 @@
+[
+  {
+    "id": "browser-research-reporting",
+    "title": "AI-Powered Browser Research & Reporting System",
+    "tagline": "From a URL to a finished PowerPoint — automatically.",
+    "description": "An end-to-end pipeline that drives a real browser to visit websites or platforms, extracts data, captures and crops screenshots, runs AI analysis on the collected material, and compiles structured insights into an automated PowerPoint report.",
+    "problem": "Research and reporting work was done by hand: opening dozens of pages, copying information, taking screenshots, cropping them, pasting into slides and writing commentary. Slow, inconsistent, and impossible to repeat at scale.",
+    "solution": "A Playwright-driven browser worker collects pages and screenshots, an image-processing step crops and normalises visuals, an LLM layer analyses the extracted content using structured outputs, and a report generator assembles everything into a branded PPTX deck — with a review step before delivery.",
+    "technologies": ["Playwright", "Python", "LLM APIs", "Structured Outputs", "Pillow", "python-pptx", "Node.js"],
+    "tags": ["Browser Automation", "Playwright", "Python", "LLM", "Reporting", "AI Agent"],
+    "workflow": [
+      "Website / Platform",
+      "Browser Automation",
+      "Data Extraction",
+      "Screenshot Capture",
+      "Image Processing / Cropping",
+      "AI Analysis",
+      "Structured Insights",
+      "Automated PowerPoint Report"
+    ],
+    "architecture": [
+      { "layer": "Input", "detail": "List of target URLs / platform queries + report template" },
+      { "layer": "Browser Worker", "detail": "Playwright sessions with navigation, waits, scroll & capture" },
+      { "layer": "Processing", "detail": "HTML → structured data; screenshots → cropped assets" },
+      { "layer": "AI Layer", "detail": "LLM analysis with JSON-schema outputs per section" },
+      { "layer": "Output", "detail": "PPTX generation with slide templates + asset embedding" }
+    ],
+    "capabilities": [
+      "Multi-page browser navigation and extraction",
+      "Full-page and element-level screenshot capture",
+      "AI analysis constrained to structured JSON outputs",
+      "Automated slide generation with images and commentary",
+      "Re-runnable: same input → consistent report structure"
+    ],
+    "keyLearnings": [
+      "Robust selectors and explicit waits matter more than speed in browser automation",
+      "Structured outputs make LLM results safe to drop into templates",
+      "Keep a human review step before reports leave the system"
+    ],
+    "automationLevel": "Human-in-the-loop",
+    "status": "Production",
+    "featured": true,
+    "year": "2025",
+    "github": "",
+    "live": "",
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "id": "seo-research-automation",
+    "title": "Intelligent SEO Research & Analysis Automation",
+    "tagline": "A research system — not a ranking promise.",
+    "description": "An automation and research system that analyses websites, surfaces technical issues, studies competitors, runs a keyword research workflow, captures evidence screenshots, and produces an AI-written analysis report. It supports SEO work; it does not guarantee rankings.",
+    "problem": "SEO audits required manually crawling pages, checking technical signals, comparing competitors and compiling findings — repeated for every client with the same structure each time.",
+    "solution": "A browser automation layer crawls the target and competitor sites, a checks module flags technical issues (meta, headings, links, performance hints), a keyword workflow organises research inputs, and an LLM layer turns raw findings into a structured, readable report with screenshots as evidence.",
+    "technologies": ["Playwright", "Python", "LLM APIs", "Node.js", "n8n", "Structured Outputs"],
+    "tags": ["SEO", "Browser Automation", "Research", "LLM", "Automation", "Reporting"],
+    "workflow": [
+      "Target & Competitor URLs",
+      "Website Crawl (Browser)",
+      "Technical Issue Checks",
+      "Competitor Research",
+      "Keyword Research Workflow",
+      "Screenshot Evidence",
+      "AI Analysis",
+      "Structured Report"
+    ],
+    "architecture": [
+      { "layer": "Input", "detail": "Domain, competitor list, focus topics" },
+      { "layer": "Crawler", "detail": "Playwright navigation + DOM extraction" },
+      { "layer": "Checks", "detail": "Rule-based technical audit module" },
+      { "layer": "AI Layer", "detail": "LLM summarisation & prioritisation with schemas" },
+      { "layer": "Output", "detail": "Report document + screenshot appendix" }
+    ],
+    "capabilities": [
+      "Website analysis and technical issue identification",
+      "Competitor research workflow",
+      "Keyword research workflow (inputs organised for human decisions)",
+      "Screenshot capture as evidence",
+      "AI-written, structured analysis report"
+    ],
+    "keyLearnings": [
+      "Rule-based checks + LLM explanation is more trustworthy than LLM-only audits",
+      "Research automation should present evidence, not conclusions presented as guarantees"
+    ],
+    "automationLevel": "Human-in-the-loop",
+    "status": "Production",
+    "featured": true,
+    "year": "2025",
+    "github": "",
+    "live": "",
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "id": "multi-step-agent-workflow",
+    "title": "Multi-Step AI Agent Workflow",
+    "tagline": "Receive a task. Plan it. Use tools. Deliver.",
+    "description": "A general-purpose agent loop that receives a task, analyses it, breaks it into steps, calls the right tools (browser, APIs, database, files), processes intermediate results, and produces a final output — with guardrails on tool use and step limits.",
+    "problem": "One-shot LLM calls fail on tasks that need several actions, external data or verification. Each new workflow was being hand-wired from scratch.",
+    "solution": "An orchestration layer with a planner → executor → reviewer loop. Tools are registered with typed schemas (including MCP servers), the agent picks and calls them step by step, and every run is logged so failures are inspectable.",
+    "technologies": ["LangChain", "OpenAI APIs", "MCP", "Tool Calling", "Node.js", "TypeScript", "MongoDB"],
+    "tags": ["AI Agent", "LLM", "MCP", "LangChain", "Node.js"],
+    "workflow": [
+      "Receive Task",
+      "Analyze Task",
+      "Break Into Steps",
+      "Select & Use Tools",
+      "Process Results",
+      "Generate Final Output"
+    ],
+    "architecture": [
+      { "layer": "Orchestrator", "detail": "Planner / executor / reviewer loop with step limits" },
+      { "layer": "Tool Registry", "detail": "Typed tools + MCP servers (browser, HTTP, DB, files)" },
+      { "layer": "Memory", "detail": "Run state, intermediate results, conversation context" },
+      { "layer": "Observability", "detail": "Per-step logs, token usage, retries" }
+    ],
+    "capabilities": [
+      "Task decomposition into executable steps",
+      "Typed tool calling with schema validation",
+      "MCP-based tool integration",
+      "Retry and fallback handling for failed steps",
+      "Inspectable run logs"
+    ],
+    "keyLearnings": [
+      "Most agent failures are tool-contract failures — strict schemas fix more than better prompts",
+      "Step limits and explicit stop conditions keep agents predictable"
+    ],
+    "automationLevel": "Fully Automated",
+    "status": "In Progress",
+    "featured": true,
+    "year": "2025",
+    "github": "",
+    "live": "",
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "id": "business-workflow-automation",
+    "title": "Business Workflow Automation System",
+    "tagline": "User input in. Decision, action and notification out.",
+    "description": "A configurable automation system where user input is processed by AI, routed through API / browser / database tools, passed through decision logic, and turned into an output, report or notification.",
+    "problem": "Teams were manually moving information between forms, spreadsheets, web portals and chat — error-prone, slow and invisible when something broke.",
+    "solution": "An event-driven flow: inputs arrive via form, webhook or email; an AI step classifies and extracts structured fields; tools perform the required actions (API calls, browser tasks, DB writes); decision logic decides the next step; outputs go to reports, dashboards or notifications — with approval gates where needed.",
+    "technologies": ["n8n", "Node.js", "LLM APIs", "Playwright", "MongoDB", "REST APIs", "Webhooks"],
+    "tags": ["Automation", "n8n", "LLM", "Browser Automation", "Node.js"],
+    "workflow": [
+      "User Input",
+      "AI Processing",
+      "API / Browser / Database Tools",
+      "Decision Logic",
+      "Output / Report / Notification"
+    ],
+    "architecture": [
+      { "layer": "Triggers", "detail": "Forms, webhooks, scheduled runs, inbox" },
+      { "layer": "AI Processing", "detail": "Classification + structured extraction" },
+      { "layer": "Actions", "detail": "REST APIs, Playwright tasks, database writes" },
+      { "layer": "Decision Logic", "detail": "Rules + thresholds + approval gates" },
+      { "layer": "Delivery", "detail": "Email / chat notifications, reports, dashboards" }
+    ],
+    "capabilities": [
+      "Multi-source input handling",
+      "AI classification and field extraction",
+      "Browser and API actions in one flow",
+      "Approval gates for sensitive steps",
+      "Notifications and reports on completion"
+    ],
+    "keyLearnings": [
+      "Idempotency and retries are essential for real business automations",
+      "Visible logs make automations trusted by non-technical teams"
+    ],
+    "automationLevel": "Human-in-the-loop",
+    "status": "Production",
+    "featured": true,
+    "year": "2025",
+    "github": "",
+    "live": "",
+    "screenshots": [],
+    "videos": []
+  }
+]

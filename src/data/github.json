@@ -1,0 +1,51 @@
+{
+  "username": "digitalshankartech",
+  "profileUrl": "https://github.com/digitalshankartech",
+  "repos": [
+    {
+      "id": "browser-research-agent",
+      "name": "browser-research-agent",
+      "description": "Playwright-driven research pipeline: crawl → screenshot → AI analysis → PPTX report.",
+      "technologies": ["Python", "Playwright", "LLM"],
+      "url": "https://github.com/digitalshankartech",
+      "lastUpdated": "2026-07",
+      "pinned": true
+    },
+    {
+      "id": "agent-orchestrator",
+      "name": "agent-orchestrator",
+      "description": "Multi-step agent loop with typed tools, MCP support and inspectable run logs.",
+      "technologies": ["TypeScript", "Node.js", "LangChain", "MCP"],
+      "url": "https://github.com/digitalshankartech",
+      "lastUpdated": "2026-08",
+      "pinned": true
+    },
+    {
+      "id": "seo-audit-automation",
+      "name": "seo-audit-automation",
+      "description": "Rule-based technical SEO checks with AI-written explanations and screenshot evidence.",
+      "technologies": ["Python", "Playwright", "Node.js"],
+      "url": "https://github.com/digitalshankartech",
+      "lastUpdated": "2026-06",
+      "pinned": true
+    },
+    {
+      "id": "workflow-automation-kit",
+      "name": "workflow-automation-kit",
+      "description": "Reusable n8n + Node.js building blocks: webhooks, AI extraction steps, approval gates, notifications.",
+      "technologies": ["n8n", "Node.js", "MongoDB"],
+      "url": "https://github.com/digitalshankartech",
+      "lastUpdated": "2026-05",
+      "pinned": false
+    },
+    {
+      "id": "mern-saas-starter",
+      "name": "mern-saas-starter",
+      "description": "Production-oriented MERN starter with auth, role-based access and dashboard layout.",
+      "technologies": ["React", "Node.js", "Express", "MongoDB"],
+      "url": "https://github.com/digitalshankartech",
+      "lastUpdated": "2025-12",
+      "pinned": false
+    }
+  ]
+}

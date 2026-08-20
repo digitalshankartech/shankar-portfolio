@@ -1,0 +1,38 @@
+{
+  "name": "Shankar Kumar",
+  "role": "Software Developer · Agentic AI Engineer",
+  "tagline": "AI Agents · AI Automation · Browser Automation · Full-Stack Systems",
+  "location": "Kolkata, India · Remote-friendly",
+  "email": "digitalshankar9128@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/digitalshankartech",
+  "github": "https://github.com/digitalshankartech",
+  "availability": "Open to freelance, remote roles & automation projects",
+  "heroHeadline": "Building AI Agents That Don't Just Answer — They Act.",
+  "heroRotating": [
+    "AI Agents",
+    "Automation Systems",
+    "Browser Automation",
+    "LLM Workflows",
+    "Intelligent Software"
+  ],
+  "heroSub": "I design and build intelligent systems that can analyze information, use tools, automate browser workflows, process data, generate insights, and execute real-world tasks.",
+  "indicators": [
+    "Agentic AI",
+    "LLM Workflows",
+    "Browser Automation",
+    "AI Automation",
+    "Full-Stack Development"
+  ],
+  "aboutHeadline": "I Like Building Systems That Do the Work.",
+  "about": [
+    "I'm a software developer focused on Agentic AI, automation systems, browser automation, and full-stack applications.",
+    "My background in MERN development helps me build complete products end to end, while my current focus on AI agents and automation lets me design systems that can reason, interact with tools, process information, and automate real-world workflows.",
+    "I enjoy taking a repetitive or complex process, understanding how it actually works, and turning it into a reliable software system — with human control kept exactly where it matters."
+  ],
+  "facts": [
+    { "label": "Currently", "value": "Software Developer @ 11MINDS" },
+    { "label": "Focus", "value": "Agentic AI · Automation · Browser workflows" },
+    { "label": "Foundation", "value": "MERN full-stack · 2+ years shipping" },
+    { "label": "Education", "value": "MCA (2025) · BCA (2023)" }
+  ]
+}

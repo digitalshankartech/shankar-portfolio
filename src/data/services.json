@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ai-agent-development",
+    "title": "AI Agent Development",
+    "icon": "Bot",
+    "problem": "Your team has tasks that need judgement, several steps and access to tools — and a single chatbot prompt can't handle them.",
+    "build": ["LLM-powered agents with tool calling", "Multi-step planning & execution loops", "MCP / API / database integrations", "Guardrails, logging and step limits"],
+    "outcome": "Agents that can take a task, work through it using your tools, and return a finished result your team can review.",
+    "tags": ["LangChain", "MCP", "OpenAI", "Tool Calling"]
+  },
+  {
+    "id": "ai-automation",
+    "title": "AI Automation",
+    "icon": "Sparkles",
+    "problem": "Repetitive work still needs a human because it involves reading, classifying or summarising information.",
+    "build": ["AI classification & extraction steps", "Structured-output pipelines", "Decision logic & approval gates", "Notifications and reports"],
+    "outcome": "Workflows where AI handles the reading and routing, and people only step in for decisions that matter.",
+    "tags": ["LLM", "n8n", "Node.js"]
+  },
+  {
+    "id": "browser-automation",
+    "title": "Browser Automation",
+    "icon": "Globe",
+    "problem": "Information lives in websites and portals with no API — someone has to click through them every day.",
+    "build": ["Playwright automation scripts", "Login, navigation & form workflows", "Screenshot & evidence capture", "Scheduled, re-runnable jobs"],
+    "outcome": "Browser tasks that run on a schedule, capture what happened, and hand structured results to the rest of your system.",
+    "tags": ["Playwright", "Python", "Node.js"]
+  },
+  {
+    "id": "workflow-automation",
+    "title": "Workflow Automation",
+    "icon": "Workflow",
+    "problem": "Data is copied between forms, sheets, CRMs and chat tools by hand, and nobody knows when something breaks.",
+    "build": ["n8n / custom Node.js workflows", "Webhook and API connectors", "Error handling & retries", "Run logs visible to the team"],
+    "outcome": "A connected workflow with clear inputs, clear outputs and visibility into every run.",
+    "tags": ["n8n", "APIs", "Webhooks"]
+  },
+  {
+    "id": "scraping-data",
+    "title": "Web Scraping & Data Processing",
+    "icon": "Database",
+    "problem": "You need structured data from many pages or sources, cleaned and ready to use.",
+    "build": ["Extraction pipelines with Playwright / Python", "Cleaning, normalisation & deduplication", "Storage into databases or sheets", "Optional AI enrichment"],
+    "outcome": "Clean, structured datasets produced on demand or on schedule — instead of manual copy-paste.",
+    "tags": ["Python", "Playwright", "MongoDB"]
+  },
+  {
+    "id": "llm-applications",
+    "title": "LLM-Powered Applications",
+    "icon": "BrainCircuit",
+    "problem": "You want AI features inside your product — search over your documents, assistants, or smart analysis — built properly.",
+    "build": ["RAG pipelines over your content", "Chat & analysis features with structured outputs", "Usage, cost and quality logging", "Full-stack integration"],
+    "outcome": "AI features that are part of a real product, not a demo — with predictable behaviour and costs.",
+    "tags": ["RAG", "LangChain", "React", "Node.js"]
+  },
+  {
+    "id": "internal-tools",
+    "title": "Custom Internal Tools",
+    "icon": "Wrench",
+    "problem": "Your team runs on spreadsheets and manual checks because the tool you need doesn't exist.",
+    "build": ["Internal dashboards & admin panels", "Automation controls & run history", "Role-based access", "Integrations with your existing stack"],
+    "outcome": "A focused internal tool that removes the spreadsheet and makes the process visible.",
+    "tags": ["React", "Node.js", "MongoDB"]
+  },
+  {
+    "id": "fullstack-apps",
+    "title": "Full-Stack Web Applications",
+    "icon": "Layers",
+    "problem": "You need a complete, production-ready web application — frontend, backend, database and deployment.",
+    "build": ["React / TypeScript frontends", "Node.js / Express APIs", "MongoDB data modelling", "Auth, payments & third-party integrations"],
+    "outcome": "A maintainable product built end to end, ready to grow AI and automation features later.",
+    "tags": ["React", "Node.js", "Express", "MongoDB"]
+  }
+]

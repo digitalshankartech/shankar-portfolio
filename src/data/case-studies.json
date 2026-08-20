@@ -1,0 +1,85 @@
+[
+  {
+    "id": "research-to-presentation",
+    "title": "From Manual Web Research to Automated Presentations",
+    "subtitle": "Browser automation + AI analysis + report generation",
+    "tags": ["Browser Automation", "Playwright", "LLM", "Reporting"],
+    "status": "Production",
+    "problem": "Producing a research presentation meant visiting many pages, reading, screenshotting, cropping, and writing slides by hand. Every report took hours and each person did it slightly differently.",
+    "oldProcess": [
+      "Open each target website manually",
+      "Copy relevant information into a document",
+      "Take and crop screenshots one by one",
+      "Write analysis and paste everything into slides",
+      "Repeat from scratch for the next report"
+    ],
+    "opportunity": "Almost every step was deterministic except the analysis — and the analysis could be handled by an LLM if given clean, structured input and a fixed output schema.",
+    "system": "A pipeline where Playwright drives the browser and captures pages and screenshots, an image-processing step crops and normalises the visuals, the LLM analyses the extracted content section by section with JSON-schema outputs, and a generator assembles a PowerPoint deck from a template. A reviewer approves before delivery.",
+    "architecture": [
+      "Input list (URLs / queries / template)",
+      "Playwright browser worker",
+      "HTML extraction + screenshot capture",
+      "Image cropping & normalisation",
+      "LLM analysis with structured outputs",
+      "PPTX generation from template",
+      "Human review & delivery"
+    ],
+    "technologies": ["Playwright", "Python", "LLM APIs", "Pillow", "python-pptx", "Node.js"],
+    "result": [
+      "Workflow implemented end to end: URL list → reviewed PPTX",
+      "Automation achieved for navigation, capture, cropping, analysis and slide assembly",
+      "Consistent report structure on every run",
+      "Human review retained as the final step"
+    ],
+    "learned": [
+      "Invest in resilient selectors and explicit waits before anything else",
+      "Schema-constrained LLM output is what makes automation safe to template",
+      "Screenshots are evidence — keep them alongside AI commentary"
+    ],
+    "codeSnippet": {
+      "language": "python",
+      "title": "Capture → crop → analyse (simplified)",
+      "code": "async with async_playwright() as p:\n    page = await (await p.chromium.launch()).new_page()\n    await page.goto(url, wait_until=\"networkidle\")\n    await page.screenshot(path=shot, full_page=True)\n\nimage = crop_to_content(shot)            # Pillow\ninsight = analyse(extract_text(page), schema=SectionInsight)  # LLM + JSON schema\ndeck.add_slide(title=insight.title, bullets=insight.points, image=image)"
+    },
+    "media": [],
+    "github": ""
+  },
+  {
+    "id": "seo-analysis-system",
+    "title": "Repeatable SEO Research & Analysis",
+    "subtitle": "Rule-based checks explained by AI, backed by screenshots",
+    "tags": ["SEO", "Browser Automation", "Research", "LLM"],
+    "status": "Production",
+    "problem": "SEO analysis for each site followed the same structure — technical checks, competitor comparison, keyword research — yet was performed manually every time.",
+    "oldProcess": [
+      "Manually inspect pages for technical issues",
+      "Visit competitor sites and note differences",
+      "Gather keyword ideas in spreadsheets",
+      "Screenshot problems as evidence",
+      "Write the report by hand"
+    ],
+    "opportunity": "Technical checks are rules. Competitor comparison is extraction. Keyword research is organisation. Only the narrative needs language — and that's exactly what an LLM is good at.",
+    "system": "A browser crawler collects pages from the target and competitors, a checks module applies technical rules, a keyword workflow organises inputs for human decisions, and an LLM layer writes a prioritised narrative from the structured findings. Output is a report with an evidence appendix of screenshots. The system clearly presents findings — it does not promise ranking outcomes.",
+    "architecture": [
+      "Domain + competitor inputs",
+      "Playwright crawl & DOM extraction",
+      "Technical checks module",
+      "Keyword research workflow",
+      "Screenshot evidence capture",
+      "LLM prioritisation & narrative",
+      "Structured report output"
+    ],
+    "technologies": ["Playwright", "Python", "Node.js", "LLM APIs", "n8n"],
+    "result": [
+      "Workflow implemented: site + competitors → structured analysis report",
+      "Automation achieved for crawling, checks, evidence capture and report drafting",
+      "Keyword decisions kept with the human specialist"
+    ],
+    "learned": [
+      "Separate facts (rules) from interpretation (LLM) to keep reports trustworthy",
+      "Always label research systems honestly — no ranking guarantees"
+    ],
+    "media": [],
+    "github": ""
+  }
+]

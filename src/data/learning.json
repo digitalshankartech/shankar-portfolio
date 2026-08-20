@@ -1,0 +1,15 @@
+[
+  { "id": "orchestration", "title": "Advanced Agent Orchestration", "category": "Agentic AI", "status": "Applying", "since": "2025-09", "note": "Planner / executor / reviewer patterns, step budgets, structured hand-offs." },
+  { "id": "prod-ai", "title": "Production-Grade AI Systems", "category": "Agentic AI", "status": "Applying", "since": "2025-10", "note": "Cost tracking, fallbacks, timeouts, safe retries." },
+  { "id": "agent-eval", "title": "Agent Evaluation", "category": "Agentic AI", "status": "Learning", "since": "2026-01", "note": "Golden tasks, trajectory checks, regression suites for prompts and tools." },
+  { "id": "memory", "title": "AI Memory Systems", "category": "Agentic AI", "status": "Learning", "since": "2026-02", "note": "Short-term vs long-term memory, summarisation, retrieval triggers." },
+  { "id": "vector-db", "title": "Vector Databases", "category": "AI Infrastructure", "status": "Learning", "since": "2026-01", "note": "Chunking strategies, hybrid search, re-ranking." },
+  { "id": "multi-agent", "title": "Multi-Agent Collaboration", "category": "Agentic AI", "status": "Exploring", "since": "2026-03", "note": "Specialist agents, supervisor patterns, shared state." },
+  { "id": "adv-browser", "title": "Advanced Browser Automation", "category": "Automation", "status": "Applying", "since": "2025-11", "note": "Session persistence, anti-flakiness patterns, parallel contexts." },
+  { "id": "queues", "title": "Queue Systems", "category": "Backend Infrastructure", "status": "Learning", "since": "2026-02", "note": "Background jobs for long-running agent and browser tasks." },
+  { "id": "redis", "title": "Redis", "category": "Backend Infrastructure", "status": "Learning", "since": "2026-02", "note": "Caching, rate limits, job state." },
+  { "id": "bullmq", "title": "BullMQ", "category": "Backend Infrastructure", "status": "Exploring", "since": "2026-04", "note": "Node.js job queues with retries and scheduling." },
+  { "id": "docker", "title": "Docker", "category": "DevOps", "status": "Learning", "since": "2026-01", "note": "Reproducible environments for Playwright workers and services." },
+  { "id": "cicd", "title": "CI/CD", "category": "DevOps", "status": "Exploring", "since": "2026-05", "note": "Automated testing and deployments for automation pipelines." },
+  { "id": "observability", "title": "Monitoring & Observability", "category": "DevOps", "status": "Exploring", "since": "2026-05", "note": "Tracing agent runs, alerts on failed workflows." }
+]

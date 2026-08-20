@@ -1,0 +1,80 @@
+[
+  {
+    "id": "11minds",
+    "company": "11MINDS",
+    "role": "Software Developer",
+    "period": "Aug 2025 – Present",
+    "start": "2025-08",
+    "end": null,
+    "location": "Kolkata",
+    "current": true,
+    "focus": ["AI agents", "LLM workflows", "Automation systems", "Production software development"],
+    "problemsSolved": [
+      "Replacing manual research, data collection and reporting with browser-driven automation pipelines",
+      "Turning one-off LLM prompts into repeatable multi-step agent workflows with tool access",
+      "Making automation outputs reviewable before they reach end users"
+    ],
+    "systemsBuilt": [
+      "Browser research & reporting pipeline (Playwright → AI analysis → PPTX)",
+      "Multi-step agent orchestration with typed tools and MCP",
+      "Workflow automations connecting APIs, browser tasks and databases"
+    ],
+    "technologies": ["LangChain", "OpenAI APIs", "MCP", "Playwright", "Python", "n8n", "Node.js", "TypeScript", "MongoDB"],
+    "growth": "Moved from building web products to designing systems where AI reasons, uses tools and executes real work."
+  },
+  {
+    "id": "resto-g",
+    "company": "Resto-G",
+    "role": "Software Developer",
+    "period": "Aug 2024 – Jul 2025",
+    "start": "2024-08",
+    "end": "2025-07",
+    "location": "Kolkata, West Bengal",
+    "focus": ["Full-stack MERN products", "SaaS dashboards", "API design", "Production deployments"],
+    "problemsSolved": [
+      "Built and maintained production-grade web applications used by real customers",
+      "Designed REST APIs and data models that could evolve with product requirements",
+      "Improved reliability and performance of user-facing dashboards"
+    ],
+    "systemsBuilt": [
+      "E-commerce and SaaS dashboard features across React + Node.js + MongoDB",
+      "Reusable frontend component layers and backend service modules"
+    ],
+    "technologies": ["React", "Node.js", "Express", "MongoDB", "REST APIs", "JavaScript"],
+    "growth": "Learned what it takes to ship and keep a product running — edge cases, data integrity and iteration speed."
+  },
+  {
+    "id": "hexire",
+    "company": "Hexire Informatics Pvt. Ltd.",
+    "role": "Software Developer Intern",
+    "period": "May 2024 – Aug 2024",
+    "start": "2024-05",
+    "end": "2024-08",
+    "location": "Hazaribagh, Jharkhand",
+    "focus": ["Full-stack features", "Developer tooling", "API integration"],
+    "problemsSolved": [
+      "Delivered full-stack features end to end under real deadlines",
+      "Integrated third-party APIs into existing products"
+    ],
+    "systemsBuilt": ["Web application modules across frontend and backend"],
+    "technologies": ["React", "Node.js", "Express", "MongoDB", "JavaScript"],
+    "growth": "First exposure to working across the whole stack inside a team codebase."
+  },
+  {
+    "id": "graviton",
+    "company": "Graviton Web Technologies",
+    "role": "Frontend Developer Intern",
+    "period": "Oct 2023 – Apr 2024",
+    "start": "2023-10",
+    "end": "2024-04",
+    "location": "Bengaluru",
+    "focus": ["Responsive UIs", "State management", "Client-side routing"],
+    "problemsSolved": [
+      "Built responsive, accessible interfaces from design specs",
+      "Managed complex UI state with Redux"
+    ],
+    "systemsBuilt": ["React interfaces with Redux, React Router, Bootstrap and Material-UI"],
+    "technologies": ["React", "Redux", "React Router", "Bootstrap", "Material-UI", "JavaScript", "HTML", "CSS"],
+    "growth": "Built the frontend foundation everything else now sits on."
+  }
+]
