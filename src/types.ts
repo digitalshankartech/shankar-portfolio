@@ -162,6 +162,8 @@ export interface Profile {
   email: string;
   linkedin: string;
   github: string;
+  portrait: string;
+  resume: string;
   availability: string;
   heroHeadline: string;
   heroRotating: string[];

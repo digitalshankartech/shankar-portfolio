@@ -66,7 +66,7 @@ body.modal-open {
     @apply hover:border-white/[0.12] hover:bg-white/[0.04];
   }
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.22em] text-accent/80;
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-accent/85;
   }
   .h2 {
     @apply font-display font-semibold leading-[1.08] tracking-tight text-white;
@@ -76,7 +76,7 @@ body.modal-open {
     @apply text-base leading-relaxed text-white/60 sm:text-lg;
   }
   .chip {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1 font-mono text-[11px] tracking-wide text-white/70;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/[0.09] bg-white/[0.03] px-3 py-1 font-mono text-xs tracking-wide text-white/70;
   }
   .btn {
     @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 sm:px-6;
@@ -91,11 +91,21 @@ body.modal-open {
     @apply bg-gradient-to-r from-accent via-accent-cyan to-accent-violet bg-clip-text text-transparent;
   }
   .section {
-    @apply relative py-16 sm:py-20 lg:py-28;
+    @apply relative isolate overflow-clip py-16 sm:py-20 lg:py-24;
   }
   .divider-glow {
     @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent;
   }
+}
+
+main > .section:nth-of-type(4n + 2) {
+  background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.025) 50%, rgba(255,255,255,0.012));
+}
+
+@media (max-width: 639px) {
+  .glass { backdrop-filter: blur(12px); }
+  .section { content-visibility: auto; contain-intrinsic-size: auto 1100px; }
+  .noise::after { opacity: 0.022; }
 }
 
 @supports (padding: max(0px)) {

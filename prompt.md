@@ -1,1 +1,0 @@
-https://github.com/digitalshankartech/shankar-portfolio.git

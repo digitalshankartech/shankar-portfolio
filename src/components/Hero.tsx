@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowRight, ArrowDown, BriefcaseBusiness, Download, Github, Linkedin } from "lucide-react";
 import { profile } from "@/lib/content";
 import Glow from "@/components/ui/Glow";
 
@@ -118,8 +118,33 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55 }}
+            className="mb-5 flex items-center gap-3"
+          >
+            <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-accent-violet/35 bg-ink-800 p-0.5 shadow-[0_0_28px_-10px_rgba(244,114,182,0.65)] sm:h-14 sm:w-14">
+              <img
+                src={profile.portrait}
+                alt="Portrait of Shankar Kumar"
+                width="56"
+                height="56"
+                fetchPriority="high"
+                className="h-full w-full rounded-[0.8rem] object-cover object-top"
+              />
+            </span>
+            <div className="min-w-0">
+              <p className="font-display text-sm font-semibold text-white sm:text-base">Hi, I&apos;m {profile.name}</p>
+              <p className="mt-0.5 flex items-center gap-1.5 text-xs text-white/55 sm:text-sm">
+                <BriefcaseBusiness size={13} className="shrink-0 text-accent-violet" aria-hidden />
+                Software Developer at 11MINDS
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] py-1.5 pl-2 pr-4 font-mono text-[11px] tracking-wide text-white/70"
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] py-1.5 pl-2 pr-4 font-mono text-xs tracking-wide text-white/70"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
@@ -168,6 +193,29 @@ export default function Hero() {
             </a>
             <a href="#contact" className="btn-ghost">
               Let&apos;s Build Something
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-4 flex flex-wrap items-center gap-1"
+            aria-label="Profile links"
+          >
+            <a
+              href={profile.resume}
+              download="Shankar_Kumar_Resume.docx"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm text-white/65 transition hover:bg-white/[0.04] hover:text-white"
+            >
+              <Download size={15} aria-hidden /> Download resume
+            </a>
+            <span className="h-4 w-px bg-white/10" aria-hidden />
+            <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub profile" className="grid h-11 w-11 place-items-center rounded-full text-white/50 transition hover:bg-white/[0.04] hover:text-accent">
+              <Github size={17} aria-hidden />
+            </a>
+            <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn profile" className="grid h-11 w-11 place-items-center rounded-full text-white/50 transition hover:bg-white/[0.04] hover:text-accent-violet">
+              <Linkedin size={17} aria-hidden />
             </a>
           </motion.div>
 

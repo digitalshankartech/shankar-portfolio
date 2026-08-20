@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 import clsx from "clsx";
 import { navItems, profile } from "@/lib/content";
 
@@ -10,6 +10,7 @@ export default function Navigation() {
   const [active, setActive] = useState<string>("");
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const moreRef = useRef<HTMLDetailsElement>(null);
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
@@ -92,10 +93,11 @@ export default function Navigation() {
             </a>
 
             <ul className="hidden items-center gap-1 lg:flex">
-              {navItems.slice(0, 8).map((item) => (
+              {navItems.slice(0, 6).map((item) => (
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
+                    aria-current={active === item.id ? "location" : undefined}
                     className={clsx(
                       "relative rounded-full px-3 py-1.5 text-[13px] transition-colors",
                       active === item.id ? "text-white" : "text-white/55 hover:text-white"
@@ -112,6 +114,36 @@ export default function Navigation() {
                   </a>
                 </li>
               ))}
+              <li>
+                <details ref={moreRef} className="group/more relative">
+                  <summary
+                    className={clsx(
+                      "flex min-h-9 cursor-pointer list-none items-center gap-1 rounded-full px-3 text-[13px] transition-colors [&::-webkit-details-marker]:hidden",
+                      navItems.slice(6).some((item) => item.id === active)
+                        ? "bg-white/[0.07] text-white"
+                        : "text-white/55 hover:text-white"
+                    )}
+                  >
+                    More <ChevronDown size={13} className="transition-transform group-open/more:rotate-180" />
+                  </summary>
+                  <div className="glass absolute right-0 top-[calc(100%+0.75rem)] w-56 rounded-2xl p-2 shadow-2xl">
+                    {navItems.slice(6).map((item) => (
+                      <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        aria-current={active === item.id ? "location" : undefined}
+                        onClick={() => moreRef.current?.removeAttribute("open")}
+                        className={clsx(
+                          "flex min-h-11 items-center rounded-xl px-3 text-sm transition-colors",
+                          active === item.id ? "bg-white/[0.07] text-accent" : "text-white/65 hover:bg-white/[0.04] hover:text-white"
+                        )}
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                </details>
+              </li>
             </ul>
 
             <div className="flex items-center gap-2">
@@ -152,27 +184,37 @@ export default function Navigation() {
             exit={{ opacity: 0 }}
             className="safe-top safe-bottom fixed inset-0 z-40 overflow-y-auto bg-ink-950/95 pt-24 backdrop-blur-xl lg:hidden"
           >
-            <div className="container-x flex min-h-full flex-col justify-center py-8">
-              <ul className="space-y-1">
-                {navItems.map((item, i) => (
+            <div className="container-x flex min-h-full flex-col py-8 pt-20">
+              <p className="eyebrow mb-5">Browse the portfolio</p>
+              {[
+                { label: "Work", items: navItems.slice(0, 5) },
+                { label: "Profile", items: navItems.slice(5, 9) },
+                { label: "Connect", items: navItems.slice(9) },
+              ].map((group, groupIndex) => (
+                <div key={group.label} className="mb-6">
+                  <p className="mb-2 font-mono text-xs uppercase tracking-[0.18em] text-white/35">{group.label}</p>
+                  <ul className="grid grid-cols-2 gap-1.5">
+                {group.items.map((item, i) => (
                   <motion.li
                     key={item.id}
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.05 * i }}
+                    transition={{ delay: 0.025 * (i + groupIndex * 4) }}
                   >
                     <a
                       href={`#${item.id}`}
                       onClick={() => setOpen(false)}
                       aria-current={active === item.id ? "location" : undefined}
-                      className={clsx("flex min-h-11 items-center rounded-xl px-2 font-display text-[clamp(1.35rem,6vw,1.875rem)] font-semibold transition", active === item.id ? "bg-white/[0.06] text-accent" : "text-white/80 hover:bg-white/[0.03] hover:text-white")}
+                      className={clsx("flex min-h-11 items-center rounded-xl border px-3 font-display text-[15px] font-semibold transition", active === item.id ? "border-accent/25 bg-accent/[0.08] text-accent" : "border-white/[0.06] bg-white/[0.02] text-white/75 hover:bg-white/[0.05] hover:text-white")}
                     >
                       {item.label}
                     </a>
                   </motion.li>
                 ))}
               </ul>
-              <div className="mt-10 flex flex-wrap gap-3">
+                </div>
+              ))}
+              <div className="mt-auto flex flex-wrap gap-3 border-t border-white/[0.06] pt-6">
                 <a href={`mailto:${profile.email}`} className="btn-primary" onClick={() => setOpen(false)}>
                   Email me
                 </a>

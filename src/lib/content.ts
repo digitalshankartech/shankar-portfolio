@@ -45,7 +45,7 @@ export const pinnedRepos = [...github.repos].sort((a, b) => {
 
 /**
  * Site navigation, in page order.
- * The desktop bar shows the first 8; the mobile menu and footer show all of them.
+ * Primary destinations stay visible; the grouped navigation and footer expose all of them.
  */
 export const navItems = [
   { id: "build", label: "What I Build" },

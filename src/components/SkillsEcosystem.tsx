@@ -122,16 +122,16 @@ export default function SkillsEcosystem() {
                     key={n.id}
                     className="cursor-pointer focus:outline-none"
                     onMouseEnter={() => setActive(n.id)}
-                    onMouseLeave={() => setActive(null)}
+                    onMouseLeave={(event) => { if (!event.currentTarget.matches(":focus")) setActive(null); }}
                     onClick={() => setActive((a) => (a === n.id ? null : n.id))}
                     onKeyDown={(event) => {
                       if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setActive((a) => (a === n.id ? null : n.id)); }
                     }}
                     tabIndex={0}
                     onFocus={() => setActive(n.id)}
-                    onBlur={() => setActive(null)}
                     role="button"
                     aria-label={n.name}
+                    aria-pressed={on}
                     opacity={linked ? 1 : 0.3}
                     style={{ transition: "opacity .3s" }}
                   >
@@ -181,8 +181,9 @@ export default function SkillsEcosystem() {
                   <motion.button
                     key={c.id}
                     onMouseEnter={() => setActive(c.id)}
-                    onMouseLeave={() => setActive(null)}
+                    onMouseLeave={(event) => { if (!event.currentTarget.matches(":focus")) setActive(null); }}
                     onClick={() => setActive((a) => (a === c.id ? null : c.id))}
+                    aria-pressed={on}
                     animate={{ opacity: dim ? 0.45 : 1 }}
                     className={clsx(
                       "card card-hover relative min-h-11 overflow-hidden p-4 text-left transition-all",

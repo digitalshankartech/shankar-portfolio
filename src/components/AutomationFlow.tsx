@@ -48,6 +48,8 @@ export default function AutomationFlow() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35 }}
+            id="automation-step-detail"
+            aria-live="polite"
             className="card mt-10 p-5"
           >
             <p className="eyebrow mb-2">
@@ -83,16 +85,19 @@ export default function AutomationFlow() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05, duration: 0.5 }}
+                    className="relative"
+                  >
+                  <button
+                    type="button"
                     onMouseEnter={() => setHover(i)}
                     onMouseLeave={() => setHover(null)}
                     onFocus={() => setHover(i)}
                     onBlur={() => setHover(null)}
-                    tabIndex={0}
-                    role="button"
-                    aria-label={`Step ${i + 1}: ${n.label}. ${n.hint}`}
+                    aria-pressed={i === active}
+                    aria-describedby="automation-step-detail"
                     onClick={() => setActive(i)}
                     className={clsx(
-                      "group relative flex min-h-11 cursor-pointer items-center gap-3 rounded-2xl border py-2.5 pl-2 pr-3 transition-all duration-500 sm:gap-5 sm:pr-4",
+                      "group relative flex min-h-11 w-full cursor-pointer items-center gap-3 rounded-2xl border py-2.5 pl-2 pr-3 text-left transition-all duration-300 sm:gap-5 sm:pr-4",
                       on
                         ? "border-white/[0.16] bg-white/[0.05] shadow-glow"
                         : "border-transparent hover:border-white/[0.08] hover:bg-white/[0.02]"
@@ -122,6 +127,7 @@ export default function AutomationFlow() {
                     {i === NODES.length - 1 && (
                       <span className="ml-auto chip border-accent-amber/30 text-accent-amber">control</span>
                     )}
+                  </button>
                   </motion.li>
                 );
               })}
