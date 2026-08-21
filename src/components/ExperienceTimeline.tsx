@@ -75,7 +75,7 @@ export default function ExperienceTimeline() {
                   >
                     <div>
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className="font-mono text-[11px] tracking-wide text-accent/90">{e.period}</span>
+                        <span className="font-mono text-[13px] text-accent/90">{e.period}</span>
                         {e.current && <span className="chip border-accent/30 py-0.5 text-accent">Current</span>}
                       </div>
                       <h3 className="mt-2 font-display text-xl font-semibold text-white">{e.role}</h3>

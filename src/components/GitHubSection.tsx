@@ -49,7 +49,7 @@ export default function GitHubSection() {
                   <span className="font-mono text-[13px] text-white group-hover:text-accent">{repo.name}</span>
                 </div>
                 {repo.pinned && (
-                  <span className="flex items-center gap-1 font-mono text-[10px] text-accent/80">
+                  <span className="flex items-center gap-1 text-xs text-accent/90">
                     <Pin size={10} /> pinned
                   </span>
                 )}
@@ -66,10 +66,10 @@ export default function GitHubSection() {
               </div>
 
               <div className="mt-4 flex items-center justify-between border-t border-white/[0.06] pt-3">
-                <span className="font-mono text-[10.5px] text-white/35">updated {fmt(repo.lastUpdated)}</span>
+                <span className="text-xs text-white/55">updated {fmt(repo.lastUpdated)}</span>
                 <span className="flex items-center gap-2 text-white/40">
                   {typeof repo.stars === "number" && (
-                    <span className="flex items-center gap-1 font-mono text-[10.5px]">
+                    <span className="flex items-center gap-1 text-xs">
                       <Star size={11} /> {repo.stars}
                     </span>
                   )}

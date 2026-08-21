@@ -21,7 +21,7 @@ function RotatingWord({ words }: { words: string[] }) {
     return () => clearInterval(t);
   }, [reduce, words.length]);
   return (
-    <span className="relative inline-grid h-[1.2em] overflow-hidden align-bottom">
+    <span className="relative inline-grid min-h-[1.25em] min-w-[12ch] overflow-hidden align-bottom sm:min-w-[15ch]">
       <AnimatePresence mode="wait">
         <motion.span
           key={words[i]}
@@ -84,8 +84,8 @@ function FlowBackdrop({ active }: { active: number }) {
                     transform: on ? "translateX(4px)" : "translateX(0)",
                   }}
                 >
-                  <p className="font-mono text-[11px] tracking-wider text-white">{n.label}</p>
-                  <p className="font-mono text-[10px] text-white/40">{n.sub}</p>
+                  <p className="font-mono text-[13px] text-white">{n.label}</p>
+                  <p className="text-xs text-white/60">{n.sub}</p>
                 </div>
               </div>
             );
@@ -110,7 +110,7 @@ export default function Hero() {
   }, [reduce]);
 
   return (
-    <section id="top" className="relative flex min-h-[100svh] items-center overflow-hidden pb-12 pt-24 sm:pb-16 sm:pt-28 lg:pt-32 [@media(max-height:650px)]:min-h-0 [@media(max-height:650px)]:py-24">
+    <section id="top" className="relative flex min-h-[min(100svh,920px)] items-center overflow-hidden pb-10 pt-24 sm:pb-14 sm:pt-28 [@media(max-height:700px)]:min-h-0 [@media(max-height:700px)]:py-24">
       <FlowBackdrop active={active} />
 
       <div className="container-x relative">
@@ -119,7 +119,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
-            className="mb-5 flex items-center gap-3"
+            className="mb-4 flex items-center gap-3"
           >
             <span className="relative block h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-accent-violet/35 bg-ink-800 p-0.5 shadow-[0_0_28px_-10px_rgba(244,114,182,0.65)] sm:h-14 sm:w-14">
               <img
@@ -144,7 +144,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] py-1.5 pl-2 pr-4 font-mono text-xs tracking-wide text-white/70"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] py-1.5 pl-2 pr-4 text-[13px] text-white/65"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
@@ -157,7 +157,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-[16ch] font-display text-[clamp(2.25rem,10.5vw,4.6rem)] font-semibold leading-[1.02] tracking-[-0.035em] text-white"
+            className="max-w-[16ch] font-display text-[clamp(2.25rem,10.5vw,4.6rem)] font-semibold leading-[1.02] tracking-[-0.035em] text-white [text-wrap:balance]"
           >
             Building AI Agents That Don&apos;t Just Answer —{" "}
             <span className="gradient-text">They Act.</span>
@@ -223,14 +223,14 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             variants={{ show: { transition: { staggerChildren: 0.07, delayChildren: 0.6 } } }}
-            className="mt-9 grid grid-cols-1 gap-x-6 gap-y-3 min-[420px]:grid-cols-2 sm:mt-12 sm:flex sm:flex-wrap"
+            className="mt-7 flex flex-wrap gap-x-5 gap-y-2 sm:mt-9"
             aria-label="Focus areas"
           >
             {profile.indicators.map((t, i) => (
               <motion.li
                 key={t}
                 variants={{ hidden: { opacity: 0, y: 8 }, show: { opacity: 1, y: 0 } }}
-                className="group flex cursor-default items-center gap-2 font-mono text-[12px] tracking-wide text-white/60 transition hover:text-white"
+                className="group flex cursor-default items-center gap-2 text-[13px] text-white/65 transition hover:text-white"
               >
                 <span
                   className="h-1.5 w-1.5 rounded-full transition-all group-hover:scale-150"
@@ -246,11 +246,11 @@ export default function Hero() {
         </div>
 
         {/* Mobile pipeline strip */}
-        <div className="mt-10 grid grid-cols-[repeat(2,minmax(0,1fr))] gap-2 min-[480px]:flex min-[480px]:flex-wrap min-[480px]:items-center xl:hidden" aria-label="Agent workflow">
+        <div className="mt-8 hidden flex-wrap items-center gap-2 sm:flex xl:hidden" aria-label="Agent workflow">
           {FLOW.map((n, i) => (
             <div key={n.id} className="flex min-w-0 items-center gap-2">
               <span
-                className="min-w-0 rounded-md border px-2 py-1.5 font-mono text-[10px] leading-tight transition-colors duration-500"
+                className="min-w-0 rounded-md border px-2 py-1.5 font-mono text-xs leading-tight transition-colors duration-500"
                 style={{
                   borderColor: i === active ? "rgba(94,234,212,0.6)" : "rgba(255,255,255,0.08)",
                   color: i === active ? "#5eead4" : "rgba(255,255,255,0.5)",

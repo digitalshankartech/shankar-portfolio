@@ -28,15 +28,17 @@ export default function App() {
 
       <main>
         <Hero />
-        <WhatIBuild />
-        <AutomationFlow />
+        <div className="relative bg-white/[0.012]">
+          <WhatIBuild />
+          <AutomationFlow />
+        </div>
         <ProjectGrid />
+        <CaseStudy />
         <ArchitectureVisualizer />
         <SkillsEcosystem />
-        <LearningJourney />
         <ExperienceTimeline />
         <Services />
-        <CaseStudy />
+        <LearningJourney />
         <About />
         <GitHubSection />
         <Contact />

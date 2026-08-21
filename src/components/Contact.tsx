@@ -59,13 +59,14 @@ export default function Contact() {
                     href={l.href}
                     target={l.id === "email" ? undefined : "_blank"}
                     rel="noreferrer"
+                    aria-label={`${l.label}: ${l.value}`}
                     className="card card-hover group flex items-center gap-3 p-4 text-left"
                   >
                     <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-accent">
                       <Icon size={15} />
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-white/40">{l.label}</span>
+                      <span className="block text-xs uppercase tracking-[0.08em] text-white/55">{l.label}</span>
                       <span className="block truncate text-[13px] text-white/80 group-hover:text-white">{l.value}</span>
                     </span>
                   </a>
@@ -73,7 +74,7 @@ export default function Contact() {
               })}
             </motion.div>
 
-            <motion.p variants={fadeUp} custom={5} className="mt-8 flex flex-wrap items-center justify-center gap-1.5 text-center font-mono text-[11px] text-white/40">
+            <motion.p variants={fadeUp} custom={5} className="mt-8 flex flex-wrap items-center justify-center gap-1.5 text-center text-[13px] text-white/60">
               <MapPin size={12} /> {profile.location} · {profile.availability}
             </motion.p>
           </div>

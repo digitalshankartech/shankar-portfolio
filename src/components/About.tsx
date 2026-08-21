@@ -13,6 +13,10 @@ export default function About() {
       <div className="container-x relative grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div>
           <SectionHeader eyebrow="About" title={profile.aboutHeadline} />
+          <div className="mt-7 flex items-center gap-4 rounded-2xl border border-accent-violet/15 bg-gradient-to-r from-accent-violet/[0.08] to-transparent p-4">
+            <span className="block h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-accent-violet/30 bg-ink-800 shadow-[0_0_30px_-14px_rgba(244,114,182,0.7)]"><img src={profile.portrait} alt="" width="80" height="80" loading="lazy" className="h-full w-full object-cover object-top" /></span>
+            <p className="text-sm leading-relaxed text-white/70">Builder first: I care about the path from a messy real-world workflow to a dependable system someone can actually use.</p>
+          </div>
           <motion.div
             initial="hidden"
             whileInView="show"

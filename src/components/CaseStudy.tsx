@@ -100,7 +100,7 @@ export default function CaseStudy() {
                 <ol className="space-y-2">
                   {study.oldProcess.map((step, i) => (
                     <li key={step} className="flex gap-3 text-sm text-white/70">
-                      <span className="font-mono text-[11px] text-white/30">{String(i + 1).padStart(2, "0")}</span>
+                      <span className="font-mono text-xs text-white/55">{String(i + 1).padStart(2, "0")}</span>
                       {step}
                     </li>
                   ))}
@@ -166,17 +166,15 @@ export default function CaseStudy() {
 
             {study.codeSnippet && (
               <motion.div variants={fadeUp} custom={9} className="lg:col-span-2">
-                <div className="card overflow-hidden">
-                  <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-3">
-                    <p className="font-mono text-[11px] text-white/60">
-                      {study.codeSnippet.title ?? "Snippet"}
-                    </p>
+                <details className="card group overflow-hidden">
+                  <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 px-5 py-3 text-sm font-medium text-white marker:hidden">
+                    <span>View technical implementation: {study.codeSnippet.title ?? "Code snippet"}</span>
                     <span className="chip py-0.5">{study.codeSnippet.language}</span>
-                  </div>
-                  <pre className="overflow-x-auto p-5 font-mono text-[12px] leading-relaxed text-white/75">
+                  </summary>
+                  <pre className="overflow-x-auto border-t border-white/[0.06] p-5 font-mono text-[13px] leading-relaxed text-white/80">
                     <code>{study.codeSnippet.code}</code>
                   </pre>
-                </div>
+                </details>
               </motion.div>
             )}
 
@@ -203,7 +201,7 @@ export default function CaseStudy() {
           whileInView="show"
           viewport={viewport}
           variants={fadeUp}
-          className="mt-6 font-mono text-[11px] text-white/35"
+          className="mt-6 text-xs text-white/50"
         >
           Template lives in case-studies.json — add a new object and it renders here automatically.
         </motion.p>

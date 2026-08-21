@@ -53,7 +53,7 @@ export default function Services() {
           whileInView="show"
           viewport={viewport}
           variants={{ show: { transition: { staggerChildren: 0.05 } } }}
-          className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4"
+          className="mt-10 grid gap-3 md:grid-cols-2"
         >
           {services.map((s, i) => (
             <motion.article
@@ -68,19 +68,19 @@ export default function Services() {
                 aria-expanded={expanded === s.id}
                 aria-controls={`service-${s.id}`}
                 onClick={() => setExpanded((value) => value === s.id ? null : s.id)}
-                className="flex min-h-11 w-full items-center gap-3 text-left md:pointer-events-none"
+                className="flex min-h-11 w-full items-center gap-3 text-left"
               >
                 <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-accent">
                   <ServiceIcon name={s.icon} />
                 </span>
                 <h3 className="flex-1 font-display text-[16px] font-semibold leading-tight text-white">{s.title}</h3>
-                <ChevronDown size={17} className={`text-white/50 transition-transform md:hidden ${expanded === s.id ? "rotate-180" : ""}`} />
+                <ChevronDown size={17} className={`text-white/50 transition-transform ${expanded === s.id ? "rotate-180" : ""}`} />
               </button>
 
               <motion.div
                 id={`service-${s.id}`}
                 initial={false}
-                className={`mt-5 flex flex-1 flex-col gap-3 ${expanded === s.id ? "flex" : "hidden md:flex"}`}
+                className={`mt-5 flex flex-1 flex-col gap-3 ${expanded === s.id ? "flex" : "hidden"}`}
               >
                 <div>
                   <p className="eyebrow mb-1 text-white/45">Problem</p>
@@ -105,17 +105,17 @@ export default function Services() {
                 </div>
               </motion.div>
 
-              <div className={`mt-5 items-center justify-between border-t border-white/[0.06] pt-4 ${expanded === s.id ? "flex" : "hidden md:flex"}`}>
+              <div className={`mt-5 items-center justify-between border-t border-white/[0.06] pt-4 ${expanded === s.id ? "flex" : "hidden"}`}>
                 <div className="flex flex-wrap items-center gap-1.5">
                   {s.tags?.slice(0, 3).map((t, idx) => (
                     <span key={t} className="flex items-center gap-1.5">
                       {idx > 0 && <span className="text-white/20">·</span>}
-                      <span className="font-mono text-[10px] text-white/40">{t}</span>
+                      <span className="font-mono text-xs text-white/55">{t}</span>
                     </span>
                   ))}
                 </div>
-                <a href="#contact" className="flex items-center gap-1 text-xs font-medium text-white/70 transition hover:text-accent">
-                  Discuss <ArrowRight size={12} />
+                <a href="#contact" className="flex min-h-11 items-center gap-1 text-sm font-medium text-white/80 transition hover:text-accent">
+                  Discuss this service <ArrowRight size={14} />
                 </a>
               </div>
             </motion.article>

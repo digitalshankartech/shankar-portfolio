@@ -1,5 +1,5 @@
 import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
-import { navItems, profile } from "@/lib/content";
+import { profile } from "@/lib/content";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -44,20 +44,18 @@ export default function Footer() {
             </div>
           </div>
 
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-10 gap-y-2 sm:grid-cols-3">
-            {navItems.map((n) => (
-              <a key={n.id} href={`#${n.id}`} className="flex min-h-11 items-center text-sm text-white/50 transition hover:text-white">
-                {n.label}
-              </a>
+          <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2">
+            {[{ id: "projects", label: "Projects" }, { id: "experience", label: "Experience" }, { id: "about", label: "About" }, { id: "contact", label: "Contact" }].map((n) => (
+              <a key={n.id} href={`#${n.id}`} className="flex min-h-11 items-center text-sm text-white/60 transition hover:text-white">{n.label}</a>
             ))}
           </nav>
         </div>
 
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-white/[0.06] pt-6 sm:flex-row sm:items-center">
-          <p className="font-mono text-[11px] text-white/35">
+          <p className="text-xs text-white/50">
             © {year} {profile.name} · Built with React, TypeScript, Tailwind & Framer Motion
           </p>
-          <a href="#top" className="flex items-center gap-1.5 font-mono text-[11px] text-white/45 transition hover:text-white">
+          <a href="#top" className="flex min-h-11 items-center gap-1.5 text-xs text-white/60 transition hover:text-white">
             Back to top <ArrowUp size={12} />
           </a>
         </div>

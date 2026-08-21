@@ -29,7 +29,7 @@ function useLayout() {
 
 export default function SkillsEcosystem() {
   const { nodes, links } = useLayout();
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<string | null>(skills.categories[0]?.id ?? null);
   const reduce = useReducedMotion();
   const current = skills.categories.find((c) => c.id === active) ?? null;
 
@@ -44,7 +44,7 @@ export default function SkillsEcosystem() {
         <SectionHeader
           eyebrow="Technology Ecosystem"
           title="Skills as a connected system — not a list of percentages."
-          description="Agents need tools, tools need automation, automation needs data processing, and all of it ships inside real software. Hover or tap a node to see how each area connects."
+          description="Agents need tools, tools need automation, automation needs data processing, and all of it ships inside real software. Select a skill area to see how it connects."
         />
 
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-[1.15fr_1fr]">
@@ -182,12 +182,12 @@ export default function SkillsEcosystem() {
                     key={c.id}
                     onMouseEnter={() => setActive(c.id)}
                     onMouseLeave={(event) => { if (!event.currentTarget.matches(":focus")) setActive(null); }}
-                    onClick={() => setActive((a) => (a === c.id ? null : c.id))}
+                      onClick={() => setActive(c.id)}
                     aria-pressed={on}
                     animate={{ opacity: dim ? 0.45 : 1 }}
                     className={clsx(
                       "card card-hover relative min-h-11 overflow-hidden p-4 text-left transition-all",
-                      on && "border-white/[0.16] bg-white/[0.05]"
+                      on && "border-2 border-white/30 bg-white/[0.08]"
                     )}
                     style={on ? { boxShadow: `0 0 40px -16px ${c.color}88` } : undefined}
                   >
@@ -196,14 +196,14 @@ export default function SkillsEcosystem() {
                         <span className="h-2 w-2 rounded-full" style={{ background: c.color, boxShadow: `0 0 8px ${c.color}` }} />
                         {c.name}
                       </p>
-                      <span className="font-mono text-[10px] text-white/40">{c.skills.length}</span>
+                      <span className="font-mono text-xs text-white/60">{c.skills.length} skills</span>
                     </div>
-                    <p className="mt-1 text-xs text-white/50">{c.description}</p>
+                    <p className="mt-1 text-[13px] leading-relaxed text-white/65">{c.description}</p>
                     <div className="mt-3 flex flex-wrap gap-1.5">
                       {c.skills.map((s) => (
                         <span
                           key={s}
-                          className="rounded-md border px-2 py-0.5 font-mono text-[10.5px] transition-colors"
+                          className="rounded-md border px-2 py-0.5 font-mono text-xs transition-colors"
                           style={{
                             borderColor: on ? `${c.color}55` : "rgba(255,255,255,0.08)",
                             color: on ? "#fff" : "rgba(255,255,255,0.6)",
@@ -218,8 +218,8 @@ export default function SkillsEcosystem() {
                 );
               })}
             </div>
-            <p className="mt-4 font-mono text-[11px] text-white/35">
-              {current ? `${current.name} connects to ${links.filter((l) => l.from === current.id || l.to === current.id).length} other areas` : "Hover a node to highlight its relationships"}
+            <p className="mt-4 text-[13px] text-white/60" aria-live="polite">
+              {current ? `${current.name} connects to ${links.filter((l) => l.from === current.id || l.to === current.id).length} other areas` : "Select a skill area to highlight its relationships"}
             </p>
           </div>
         </div>

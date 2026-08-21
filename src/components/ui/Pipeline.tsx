@@ -34,7 +34,7 @@ export default function Pipeline({
             transition={{ delay: i * 0.06, duration: 0.4 }}
             className={clsx(
               "relative inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.03] font-mono text-white/80",
-              compact ? "px-2.5 py-1 text-[11px]" : "px-3 py-1.5 text-xs"
+              compact ? "px-2.5 py-1 text-xs" : "px-3 py-1.5 text-[13px]"
             )}
           >
             <span

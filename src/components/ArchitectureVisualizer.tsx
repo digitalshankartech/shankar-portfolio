@@ -18,7 +18,7 @@ export default function ArchitectureVisualizer() {
         <SectionHeader
           eyebrow="System Architecture"
           title="How the pieces fit together."
-          description="Every agentic system I build follows the same layered shape. Click a layer to see what I have experience working with at that level."
+          description="Every agentic system I build follows the same layered shape. Select a layer to see the tools and responsibilities at that level."
           align="center"
         />
 
@@ -47,12 +47,12 @@ export default function ArchitectureVisualizer() {
                     />
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3">
-                        <span className="font-mono text-[11px] text-white/35">0{i + 1}</span>
+                        <span className="font-mono text-[13px] text-white/55">0{i + 1}</span>
                         <div>
                           <p className={clsx("font-display text-[15px] font-semibold", on ? "text-white" : "text-white/75")}>
                             {layer.title}
                           </p>
-                          <p className="text-xs text-white/45">{layer.short}</p>
+                          <p className="text-[13px] text-white/65">{layer.short}</p>
                         </div>
                       </div>
                       <span
@@ -68,7 +68,7 @@ export default function ArchitectureVisualizer() {
                       {layer.items.map((it) => (
                         <span
                           key={it}
-                          className="rounded-md border border-white/[0.08] px-2 py-0.5 font-mono text-[10px] text-white/55"
+                          className="rounded-md border border-white/[0.08] px-2 py-0.5 font-mono text-xs text-white/65"
                         >
                           {it}
                         </span>
